@@ -45,7 +45,7 @@
 num-notes num-types-of-chords * constant num-all-chords
 
 : wrap-chord ( chord -- chord' )
-    num-notes num-types-of-chords * mod ;
+    num-all-chords mod ;
 
 : maj ( note -- chord )
     num-types-of-chords * major + ;
@@ -86,21 +86,19 @@ create major-scale-chords  0 maj , 2 min , 4 min , 5 maj , 7 maj , 9 min ,
 
 : print-major-scale ( root-note -- )
     num-notes-in-scale 0 ?do
-        cr                           \ root-note
-        dup i                        \ root-note root-note degree
-        major-scale-note print-note  \ root-note
+        cr
+        dup i major-scale-note print-note
     loop ;
 
 : print-major-scale-chords ( root-note -- )
     num-notes-in-scale 0 ?do
-        cr                             \ root-note
-        dup i                          \ root-note root-note degree
-        major-scale-chord print-chord  \ root-note
+        cr
+        dup i major-scale-chord print-chord
     loop ;
 
 \ Related chords
 
-variable related-chords 0
+variable related-chords
 
 : chord-flag ( chord -- flag )
     1 swap lshift ;
@@ -119,18 +117,9 @@ variable related-chords 0
     cr
     num-scales 0 ?do
         num-notes-in-scale 0 ?do
-            \ ." j = " j .
-            \ ." i = " i .
-            \ ." chord = " j i major-scale-chord .
-            \ ." chord = " j i major-scale-chord print-chord
-            \ cr
             dup j i major-scale-chord = if
-                \ ." found a match in " j print-note cr
-
                 num-notes-in-scale 0 ?do
-                    k i major-scale-chord
-                    \ dup print-chord cr
-                    set-related-chord
+                    k i major-scale-chord set-related-chord
                 loop
 
                 leave
@@ -139,10 +128,7 @@ variable related-chords 0
     loop 
     
     ( chord ) num-all-chords bounds ?do
-        \ i chord-flag . cr
-        i wrap-chord
-        dup is-related-chord if
-            dup print-chord cr
+        i wrap-chord is-related-chord ?dup if
+            print-chord cr
         endif
-        drop
     loop ;
