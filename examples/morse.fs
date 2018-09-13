@@ -6,32 +6,32 @@ defer between-words ( -- )
 
 : morse-letter
     toupper case
-		[char] A of m. m---                  endof
-		[char] B of m--- m. m. m.            endof
-		[char] C of m--- m. m--- m.          endof
-		[char] D of m--- m. m.               endof
-		[char] E of m.                       endof
-		[char] F of m. m. m--- m.            endof
-		[char] G of m--- m--- m.             endof
-		[char] H of m. m. m. m.              endof
-		[char] I of m. m.                    endof
-		[char] J of m. m--- m--- m---        endof
-		[char] K of m--- m. m---             endof
-		[char] L of m. m--- m. m.            endof
-		[char] M of m--- m---                endof
-		[char] N of m--- m.                  endof
-		[char] O of m--- m--- m---           endof
-		[char] P of m. m--- m--- m.          endof
-		[char] Q of m--- m--- m. m---        endof
-		[char] R of m. m--- m.               endof
-		[char] S of m. m. m.                 endof
-		[char] T of m---                     endof
-		[char] U of m. m. m---               endof
-		[char] V of m. m. m. m---            endof
-		[char] W of m. m--- m---             endof
-		[char] X of m--- m. m. m---          endof
-		[char] Y of m--- m. m--- m---        endof
-		[char] Z of m--- m--- m. m.          endof
+        [char] A of m. m---                  endof
+        [char] B of m--- m. m. m.            endof
+        [char] C of m--- m. m--- m.          endof
+        [char] D of m--- m. m.               endof
+        [char] E of m.                       endof
+        [char] F of m. m. m--- m.            endof
+        [char] G of m--- m--- m.             endof
+        [char] H of m. m. m. m.              endof
+        [char] I of m. m.                    endof
+        [char] J of m. m--- m--- m---        endof
+        [char] K of m--- m. m---             endof
+        [char] L of m. m--- m. m.            endof
+        [char] M of m--- m---                endof
+        [char] N of m--- m.                  endof
+        [char] O of m--- m--- m---           endof
+        [char] P of m. m--- m--- m.          endof
+        [char] Q of m--- m--- m. m---        endof
+        [char] R of m. m--- m.               endof
+        [char] S of m. m. m.                 endof
+        [char] T of m---                     endof
+        [char] U of m. m. m---               endof
+        [char] V of m. m. m. m---            endof
+        [char] W of m. m--- m---             endof
+        [char] X of m--- m. m. m---          endof
+        [char] Y of m--- m. m--- m---        endof
+        [char] Z of m--- m--- m. m.          endof
         [char] 0 of m--- m--- m--- m--- m--- endof
         [char] 1 of m. m--- m--- m--- m---   endof
         [char] 2 of m. m. m--- m--- m---     endof
