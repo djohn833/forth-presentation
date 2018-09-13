@@ -128,7 +128,8 @@ variable related-chords
     loop 
     
     ( chord ) num-all-chords bounds ?do
-        i wrap-chord is-related-chord ?dup if
-            print-chord cr
+        dup i wrap-chord is-related-chord if
+            dup i print-chord cr
         endif
+        drop
     loop ;
